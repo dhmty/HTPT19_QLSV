@@ -22,7 +22,7 @@ public class DatHang {
     @Column(name = "NhaCC")
     private String nhaCungCap;
 
-    @ManyToOne
+    @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "MANV")
     private NhanVien nhanVien;
 
@@ -30,4 +30,6 @@ public class DatHang {
     @EqualsAndHashCode.Exclude
     @ToString.Exclude
     private List<ChiTietDonDatHang> chiTietDonDatHangList;
+
+
 }

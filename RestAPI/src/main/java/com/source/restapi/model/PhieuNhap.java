@@ -19,8 +19,8 @@ public class PhieuNhap {
     @Column(name = "NGAY")
     private Date ngay;
 
-    @OneToOne
-    @JoinColumn(name = "MassoDDH")
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "MasoDDH")
     private DatHang datHang;
 
     @ManyToOne
