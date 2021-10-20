@@ -7,11 +7,11 @@ import lombok.NoArgsConstructor;
 import java.util.Date;
 
 @Data
-@NoArgsConstructor
 @AllArgsConstructor
-public class PhieuNhapResponse {
-    private String maPhieuNhap;
+@NoArgsConstructor
+public class DatHangResponse {
+    private String maSoDDH;
     private Date ngay;
-    private String maSoDonDatHang;
+    private String nhaCungCap;
     private String maNhanVien;
 }

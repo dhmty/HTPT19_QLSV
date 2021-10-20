@@ -7,7 +7,7 @@ import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
-@Repository
+@Repository("taikhoan")
 public interface TaiKhoanRepository extends JpaRepository<TaiKhoan, String> {
 
     @Query(value = "Select * from TaiKhoan", nativeQuery = true)

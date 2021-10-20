@@ -7,7 +7,7 @@ import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
-@Repository
+@Repository("quyen")
 public interface QuyenRepository extends JpaRepository<Quyen, String> {
     @Query(value = "Select * from Quyen", nativeQuery = true)
     List<Quyen> selectAll();

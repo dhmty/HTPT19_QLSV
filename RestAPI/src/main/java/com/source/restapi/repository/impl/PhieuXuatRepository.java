@@ -7,7 +7,7 @@ import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
-@Repository
+@Repository("phieuxuat")
 public interface PhieuXuatRepository extends JpaRepository<PhieuXuat, String> {
     @Query(value = "select * from PhieuXuat", nativeQuery = true)
     List<PhieuXuat> selectAll();

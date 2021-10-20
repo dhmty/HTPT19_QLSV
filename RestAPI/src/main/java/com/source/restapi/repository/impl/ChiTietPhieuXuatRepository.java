@@ -5,7 +5,7 @@ import com.source.restapi.model.IdChiTietPhieuXuat;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-@Repository
+@Repository("chitietphieuxuat")
 public interface ChiTietPhieuXuatRepository extends JpaRepository<ChiTietPhieuXuat, IdChiTietPhieuXuat> {
 
 }
