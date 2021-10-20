@@ -4,14 +4,12 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.util.Date;
-
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class PhieuNhapResponse {
+public class ChiTietPhieuNhapResponse {
     private String maPhieuNhap;
-    private Date ngay;
-    private String maSoDonDatHang;
-    private String maNhanVien;
+    private String maVatTu;
+    private Integer soLuong;
+    private Float donGia;
 }
