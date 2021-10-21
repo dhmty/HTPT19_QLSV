@@ -22,9 +22,12 @@ public class DatHang {
     @Column(name = "NhaCC")
     private String nhaCungCap;
 
-    @OneToOne(cascade = CascadeType.ALL)
+    @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "MANV")
     private NhanVien nhanVien;
+
+    @OneToOne(mappedBy = "datHang", cascade = CascadeType.ALL)
+    private PhieuNhap phieuNhap;
 
     @OneToMany(mappedBy = "datHang", cascade = CascadeType.ALL)
     @EqualsAndHashCode.Exclude
