@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.springframework.org/schema/data/jaxb" >
+<head>
+    <meta charset="UTF-8">
+    <title>Add Student</title>
+    <link rel="stylesheet" th:href="@{/css/main.css}"/>
+    <link rel="stylesheet" th:href="@{/css/reset_css.css}"/>
+    <link rel="stylesheet" th:href="@{/fonts/fontawesome-free-5.14.0/css/all.min.css}"/>
+    <link rel="stylesheet" th:href="@{/img}">
+
+</head>
+
+<body>
+<!-- <div class="col-3"></div> -->
+<div class="web">
+    <div class="container col-3 ">
+        <div class="container-header">
+            <h1>Thêm Sinh Viên</h1>
+        </div>
+        <div class="container-content col-6">
+            <form th:object="${sinhVien}" th:action="@{saveSV}" action="#" method="post">
+                <div class="content-first-block">
+                    <div class="content-item">
+                        <label th:for="maSV">Mã Sinh Viên</label>
+                        <input type="text" th:field="*{maSV}" class="form-control" placeholder="N18DCCN035" />
+                    </div>
+                    <div class="content-item">
+                        <label th:for="ho">Họ</label>
+                        <input type="text" th:field="*{ho}" class="form-control" placeholder="Lương Ngọc"  />
+                    </div>
+                    <div  class="content-item">
+                        <label  th:for="ten">Tên</label>
+                        <input type="text" th:field="*{ten}" class="form-control"  placeholder="Đại" />
+                    </div>
+                    <div  class="content-item content-item-date">
+                        <label th:for="ngaySinh">Ngày sinh</label>
+                        <input th:field="*{ngaySinh}" class="input-date form-control" placeholder="18/08/1999" onfocus="(this.type='date')"/>
+                    </div>
+                    <div  class="content-item">
+                        <label th:for="gioiTinh">Giới tính</label>
+                        <div class="content-item-gender">
+                            <div class="content-item-gender-female">
+                                <label th:for="gioiTinh">Nam</label>
+                                <input type="radio" name="gender" th:field="*{gioiTinh}" class="form-control" value="true"/>
+                            </div>
+                            <div class="content-item-gender-male">
+                                <label th:for="gioiTinh">Nữ</label>
+                                <input type="radio" name="gender" th:field="*{gioiTinh}" class="form-control" value="false"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="content-second-block">
+                    <div  class="content-item">
+                        <label th:for="email">Email</label>
+                        <input type="text" th:field="*{email}" class="form-control" placeholder="htpt19@gmail.com" />
+                    </div>
+                    <div  class="content-item">
+                        <label th:for="nganh">Ngành học</label>
+                        <input type="text" th:field="*{nganh}" class="form-control" placeholder="Công nghệ thông tin" />
+                    </div>
+                    <div  class="content-item">
+                        <label th:for="GPA">GPA</label>
+                        <input type="text" th:field="*{GPA}" class="form-control" placeholder="3.12" />
+                    </div>
+                    <div  class="content-item">
+                        <label th:for="khoaHoc">Khóa học</label>
+                        <input type="text" th:field="*{khoaHoc}" class="form-control" placeholder="2018-2023" />
+                    </div>
+                    <div class="content-item content-item-submit">
+                        <a th:href="@{/}" class="btn btn-danger">Quay Lại</a>
+                        <input type="submit" class="btn btn-success" value="Lưu Sinh Viên"/>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

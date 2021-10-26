@@ -1,0 +1,228 @@
+*{
+    font-family: Arial, Helvetica, sans-serif;
+}
+label{
+    color: #fff;
+}
+
+input{
+    color: rgb(56, 56, 56);
+}
+
+input::placeholder{
+    color: rgb(185, 184, 184);
+}
+
+.web{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height:  100vh;
+    background-color: #bbdff7;
+}
+
+.container{
+    background-color: #fff;
+    width: 80%;
+    height: 80%;
+    border-radius: 10px;
+    background-image: linear-gradient(#134ea8, #454c68);
+
+}
+
+.container-header{
+    padding:  0px 50px;
+    height: 20%;
+    display: flex;
+    border-radius: 10px;
+    align-items: center;
+}
+
+.container-header h1{
+    color: #fff;
+    font-size: 30px;
+    border-radius: 10px;
+
+}
+
+.container-content{
+    height: 80%;
+}
+
+form{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    padding:  0px 50px;
+    height: 100%;
+}
+
+.content-first-block{
+    display: flex;
+    flex-direction: column;
+    width: 48%;
+    padding-right: 5%;
+
+    
+}
+
+.content-second-block{
+    display: flex;
+    flex-direction: column;
+    width: 48%;
+    padding-left: 5%;
+
+
+
+
+}
+
+.content-item{
+   margin: 15px 0px;
+   width: 100%;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+}
+
+.content-item label{
+    
+}
+
+.content-item input{
+    height: 40px;
+    width: 66%;
+    background-color: #fff;
+    border: 0px;
+    outline: none;
+    border-radius: 4px;
+    padding-left: 8px;
+    
+}
+.content-item-gender{
+    padding-right: 125px;
+    width: 40%;
+    display: flex;
+   justify-content: space-between;
+   align-items: center;
+}
+
+.content-item-gender-female,
+.content-item-gender-male
+{
+    display: flex;
+   justify-content: space-between;
+   align-items: center;
+   flex-direction: row;
+}
+
+.content-item-gender-male input{
+    margin-left: 10px;
+
+}
+
+.content-item-gender-female input{
+    margin-left: 10px;
+}
+
+.content-item-gender input {
+  width: 20px;
+}
+.content-item-date{
+    display: flex;
+}
+
+
+.input-date{
+    position: relative;
+}
+input[type="date"]::-webkit-calendar-picker-indicator {
+    background: transparent;
+    bottom: 0;
+    color: transparent;
+    cursor: pointer;
+    height: auto;
+    left: -25px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: auto;
+}
+ 
+input[type="date"]::after {
+    content: '';
+    display: block;
+    background :url('../img/calendar_background.png') no-repeat;
+    background-size: 30px;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    right: 6px;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+}
+
+
+.content-item-submit{
+    justify-content: flex-end;
+}
+
+.content-item-submit a{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    margin-top: 35px;
+    height: 50px;
+    width: 160px;
+    border-radius: 6px;
+    border: 0px;
+    outline: none;
+    background-color: mediumseagreen;
+    color:  #fff;
+    font-weight: 600;
+    margin-right: 20px;
+}
+.content-item-submit a:hover{
+    cursor: pointer;
+    background-color: rgb(199 91 183);
+
+}
+
+.content-item-submit input{
+    margin-top: 35px;
+    height: 50px;
+    width: 160px;
+    border-radius: 6px;
+    border: 0px;
+    outline: none;
+    background-color: mediumseagreen;
+    color:  #fff;
+    font-weight: 600;
+    
+}
+
+.content-item-submit input:hover{
+    cursor: pointer;
+    background-color: rgb(119, 163, 245);
+    
+}
+
+
+
+
+
+
+
+
+
+.date{
+    width: 65%;
+}
+.date input{
+    height: 40px;
+    width: 100%;
+}
+
+
+

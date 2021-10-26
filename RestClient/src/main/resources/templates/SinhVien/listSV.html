@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.springframework.org/schema/data/jaxb">
+<head>
+    <title>Danh Sách Sinh Viên</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+</head>
+<body>
+<div class="col-3"></div>
+<div class="container col-6">
+    <h1 style="text-align: center;">QUẢN LÝ SINH VIÊN</h1>
+    <div style="clear: both; display: block; height: 10px"></div>
+    <a href="/addSV" class="btn btn-success">Thêm Sinh Viên</a>
+    <div style="clear: both; display: block; height: 10px"></div>
+    <table class="table table-active table-primary">
+        <tr class="table-dark">
+            <th>Mã Sinh Viên</th>
+            <th>Họ</th>
+            <th>Tên</th>
+            <th>Email</th>
+            <th>Ngày Sinh</th>
+            <th>Giới Tính</th>
+            <th>Ngành</th>
+            <th>GPA</th>
+            <th>Khóa Học</th>
+            <th>Actions</th>
+        </tr>
+        <tr th:each="sv : ${listSV}">
+            <td th:text="${sv.maSV}"></td>
+            <td th:text="${sv.ho}"></td>
+            <td th:text="${sv.ten}"></td>
+            <td th:text="${sv.email}"></td>
+            <td th:text="${#dates.format(sv.ngaySinh, 'dd-MM-yyyy')}"></td>
+<!--            <td th:text="${sv.ngaySinh}"></td>-->
+
+            <td th:text="${sv.gioiTinh} ? 'Nam' : 'Nữ'"></td>
+            <td th:text="${sv.nganh}"></td>
+            <td th:text="${sv.GPA}"></td>
+            <td th:text="${sv.khoaHoc}"></td>
+            <td>
+                <a th:href="@{/editSV?maSV={maSV}(maSV=${sv.maSV})}" class="btn btn-primary">Chỉnh Sửa</a>
+                <a th:href="@{/deleteSV?maSV={maSV}(maSV=${sv.maSV})}" class="btn btn-danger">Xóa</a>
+            </td>
+        </tr>
+    </table>
+</div>
+</body>
+</html>
