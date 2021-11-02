@@ -49,6 +49,17 @@
                             </div>
                         </div>
                     </div>
+                    <div  class="content-item" style="display: inline-block;">
+                        <label style="color:aqua; font-weight: bold; width: inherit;">THÔNG BÁO</label>
+                        <p style="color: red" th:if="${#fields.hasErrors('GPA')}" th:errors="*{GPA}">GPA Error</p>
+                        <p style="color: red" th:if="${#fields.hasErrors('email')}" th:errors="*{email}">Email Error</p>
+                        <p style="color: red" th:if="${#fields.hasErrors('maSV')}" th:errors="*{maSV}">MaSV Error</p>
+                        <p style="color: red" th:if="${#fields.hasErrors('ho')}" th:errors="*{ho}">hoSV Error</p>
+                        <p style="color: red" th:if="${#fields.hasErrors('ten')}" th:errors="*{ten}">tenSV Error</p>
+                        <p style="color: red" th:if="${#fields.hasErrors('ngaySinh')}" th:errors="*{ngaySinh}">ngaySinh Error</p>
+                        <p style="color: red" th:if="${#fields.hasErrors('nganh')}" th:errors="*{nganh}">nganh Error</p>
+                        <p style="color: red" th:if="${#fields.hasErrors('khoaHoc')}" th:errors="*{khoaHoc}">khoaHoc Error</p>
+                    </div>
                 </div>
                 <div class="content-second-block">
                     <div  class="content-item">
@@ -62,17 +73,22 @@
                     <div  class="content-item">
                         <label th:for="GPA">GPA</label>
                         <input type="text" th:field="*{GPA}" class="form-control" placeholder="3.12" />
+
                     </div>
                     <div  class="content-item">
                         <label th:for="khoaHoc">Khóa học</label>
                         <input type="text" th:field="*{khoaHoc}" class="form-control" placeholder="2018-2023" />
                     </div>
+
+
                     <div class="content-item content-item-submit">
+
                         <a th:href="@{/}" class="btn btn-danger">Quay Lại</a>
                         <input type="submit" class="btn btn-success" value="Lưu Sinh Viên"/>
                     </div>
                 </div>
             </form>
+
         </div>
     </div>
 </div>

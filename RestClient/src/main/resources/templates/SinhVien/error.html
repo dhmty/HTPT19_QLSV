@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.springframework.org/schema/data/jaxb">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Bootstrap Delete Confirmation Modal</title>
+    <title>ERROR CREATE SINHVIEN</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
@@ -22,9 +22,10 @@
         .modal-confirm .modal-content {
             padding: 20px;
             border-radius: 5px;
-            border: none;
             text-align: center;
             font-size: 14px;
+            background-color: peachpuff;
+            border-style: solid;
         }
         .modal-confirm .modal-header {
             border-bottom: none;
@@ -34,11 +35,6 @@
             text-align: center;
             font-size: 26px;
             margin: 30px 0 -10px;
-        }
-        .modal-confirm .close {
-            position: absolute;
-            top: -5px;
-            right: -2px;
         }
         .modal-confirm .modal-body {
             color: #999;
@@ -78,7 +74,6 @@
             min-width: 120px;
             border: none;
             min-height: 40px;
-            border-radius: 3px;
             margin: 0 5px;
         }
         .modal-confirm .btn-secondary {
@@ -100,13 +95,6 @@
     </style>
 </head>
 <body>
-<div class="text-center">
-    <!-- Button HTML (to Trigger Modal) -->
-    <a href="#myModal" class="trigger-btn" data-toggle="modal">ERROR 404, Click to view Detail</a>
-</div>
-
-<!-- Modal HTML -->
-<div id="myModal" class="modal fade">
     <div class="modal-dialog modal-confirm">
         <div class="modal-content">
             <div class="modal-header flex-column">
@@ -114,19 +102,17 @@
                     <i class="material-icons">&#xE5CD;</i>
                 </div>
                 <h4 class="modal-title w-100">Lỗi Khi Thêm Sinh Viên</h4>
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
             </div>
-            <div class="modal-body">
-                <p>Mã Sinh Viên Bạn Vừa Nhập đã tồn tại hoặc Bạn chưa điền đầy đủ thông tin, Vui Lòng Nhập Lại</p>
-            </div>
-            <div class="modal-footer justify-content-center">
-                <form action="/addSV">
-                    <button type="submit" class="btn btn-secondary" >Quay Lại</button>
-                    <button type="submit" class="btn btn-danger">Xác Nhận</button>
-                </form>
-            </div>
+            <form th:object="${message}"  action="/addSV" >
+                <div class="modal-body">
+                    <p th:text="${message}"></p>
+                </div>
+                <div class="modal-footer justify-content-center">
+                        <button type="submit" class="btn btn-secondary" >Quay Lại</button>
+                        <button type="submit" class="btn btn-danger">Xác Nhận</button>
+                </div>
+            </form>
         </div>
     </div>
-</div>
 </body>
 </html>

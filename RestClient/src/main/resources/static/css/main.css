@@ -17,14 +17,14 @@ input::placeholder{
     display: flex;
     justify-content: center;
     align-items: center;
-    height:  100vh;
+    min-height:  100vh;
     background-color: #bbdff7;
 }
 
 .container{
     background-color: #fff;
     width: 80%;
-    height: 80%;
+    min-height:80%;
     border-radius: 10px;
     background-image: linear-gradient(#134ea8, #454c68);
 
