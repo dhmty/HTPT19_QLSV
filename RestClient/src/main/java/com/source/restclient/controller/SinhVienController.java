@@ -9,11 +9,17 @@ import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.annotation.Validated;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.client.RestTemplate;
 
+import javax.validation.Valid;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotBlank;
 import java.util.Date;
 import java.util.List;
 import java.util.Optional;
@@ -27,6 +33,8 @@ public class SinhVienController {
 
     @Value("${accessToken}")
     String accessToken;
+
+    String addMessageError="Mã Sinh Viên đã tồn tại, Vui Lòng Nhập Lại";
 
     RestTemplate restTemplate = new RestTemplate();
     HttpHeaders headers = new HttpHeaders();
@@ -70,8 +78,11 @@ public class SinhVienController {
     }
 
     @RequestMapping(value = "saveSVEdit", method = RequestMethod.POST)
-    public String saveSVEdit(SinhVien sinhvien) {
-
+    public String saveSVEdit(@Validated @ModelAttribute("sinhVien") SinhVien sinhvien, BindingResult bindingResult) {
+        if (bindingResult.hasErrors()) {
+            System.out.println("có lỗi khi update");
+            return "SinhVien/editSV";
+        }
         headers.set("Authorization", "Bearer " + accessToken);
         HttpEntity<Object> entity = new HttpEntity<>(sinhvien,headers);
         Object response = restTemplate.exchange(URL_STUDENTS+"/"+sinhvien.getMaSV(), HttpMethod.PUT, entity, Object.class);
@@ -80,7 +91,12 @@ public class SinhVienController {
     }
 
     @RequestMapping(value = "saveSV", method = RequestMethod.POST)
-    public String save(SinhVien sinhvien) {
+    public String save(Model model, @Validated @ModelAttribute("sinhVien") SinhVien sinhvien, BindingResult bindingResult) {
+        if (bindingResult.hasErrors()) {
+            System.out.println("có lỗi khi insert");
+            return "SinhVien/addSV";
+        }
+
         headers.set("Authorization", "Bearer " + accessToken);
         HttpEntity<Object> entity = new HttpEntity<>(sinhvien,headers);
         try {
@@ -90,9 +106,11 @@ public class SinhVienController {
         } catch (RuntimeException ex){
             // bắt lỗi trùng mã SV
             ex.printStackTrace();
+            model.addAttribute("message",addMessageError);
             return "SinhVien/error";
         }
         return "redirect:/";
+
     }
 
     @RequestMapping(value = "/deleteSV", method = RequestMethod.GET)
