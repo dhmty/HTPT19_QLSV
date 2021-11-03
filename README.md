@@ -24,6 +24,14 @@
     - Json Web Token: Bảo Mật cho quá trình sử dụng API
     - Ứng Dụng Sử Dụng Webservice: Java Spring Boot + HTML + CSS + JS + ThymeLeaf + Bootstrap
 
+*DANH_SÁCH_API_SỬ_DỤNG:
+No. │	   Tên API	│  Phương thức HTTP	│      Đường dẫn	        │  Mã Trạng Thái      │        Mô Tả
+1   │   GET students	│      GET	        │  /api/v1/students	        │    200 (OK)	      │  Lấy danh sách Sinh Viên
+2   │   GET student	│      GET	        │  /api/v1/students/{maSV}	│    200 (OK)	      │  Lấy 1 Sinh Viên theo Mã
+3   │   POST student	│      POST	        │  /api/v1/students	        │    201 (Created)    │  Thêm 1 Sinh viên
+4   │   PUT student	│      PUT	        │  /api/v1/students/{maSV}	│    200 (OK)	      │  Sửa 1 Sinh Viên theo Mã
+5   │   DELETE student	│      DELETE	        │  /api/v1/students/{maSV}	│    204 (No Content) │  Xóa 1 Sinh Viên theo Mã
+
 *CƠ_SỞ_DỮ_LIỆU[HTPT19_SV]
     - Table: [SinhVien]
                 └── [MaSV]: Primary Key, varchar(10), not Null
