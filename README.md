@@ -1,3 +1,4 @@
+```bash
 # HTPT19_QLSV
 #NHOM_19
 #Thành_Viên:
@@ -34,7 +35,7 @@
                 └── [Nganh]: nvarchar(50), not Null
                 └── [GPA]: float, not Null
                 └── [KhoaHoc]: varchar(50), not Null
-
+				
 *PROJECT_FOLDER[HTPT19_QLSV]
 │  README.md                                         #Giới thiệu tổng quan về project
 │  HTPT19_SV.sql                                     #File scripts Cơ Sở Dữ Liệu   
@@ -93,7 +94,6 @@
          └──[java] 
             └──[com.source.restclient]
                └──    RestClientApplicationTests.java
-
 *HƯỚNG_DẪN_THIẾT_LẬP_ỨNG_DỤNG:
     - Bước 1: 
         + Tại máy local, cài đặt môi trường Database Microsoft SQL Server, dùng File scripts tạo Cơ Sở Dữ Liệu.
@@ -104,5 +104,6 @@
         + Bắt đầu Kiểm tra và chạy thử các chức năng của chương trình.
 
 *ĐÁNH_GIÁ_VÀ_CẢI_THIỆN_ỨNG_DỤNG:
-    - Ứng dụng mang tính chất mô phỏng và hiểu luồng thực hiện của Webservice và cách sử dụng ở phía người sử dụng. 
+    - Ứng dụng mang tính chất mô phỏng và hiểu luồng thực hiện của Webservice và cách sử dụng ở phía người sử dụng.
 	- Các chức năng cần cải thiện: chức năng liên kết mở rộng quy mô để phát triển Websercice rộng hơn và sử dụng tối ưu, giao diện hợp lý cũng như phù hợp với nhu cầu người dử dụng.
+```
